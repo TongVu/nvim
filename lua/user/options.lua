@@ -47,8 +47,4 @@ opt.guifont = "monospace:h17"               -- the font used in graphical neovim
 opt.shortmess:append "c"
 vim.cmd[[ set whichwrap+=<,>,[,],h,l ]]
 vim.cmd[[ set iskeyword+=- ]]
--- set colors for gitsigns
-vim.cmd[[ hi DiffAdd guibg=#333333 guifg=#8ec07c ctermbg=none ]]
-vim.cmd[[ hi DiffChange guibg=#333333 guifg=#8f3f71 ctermbg=none ]]
-vim.cmd[[ hi DiffDelete guibg=#333333 guifg=#fb4934 ctermbg=none ]]
 

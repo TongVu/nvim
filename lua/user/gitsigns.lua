@@ -5,7 +5,7 @@ end
 
 git.setup {
     signs = {
-        add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'}, -- 契
+        add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
         change       = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
         delete       = {hl = 'GitSignsDelete', text = "契", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
         topdelete    = {hl = 'GitSignsDelete', text = "契", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
@@ -19,22 +19,22 @@ git.setup {
         -- add this line
         -- Default keymap options
         noremap = true,
-
+        -- normal mode
         ['n gn'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
         ['n gp'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
 
-        -- normal mode
         ['n <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
-        ['v <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
         ['n <leader>gu'] = '<cmd>Gitsigns undo_stage_hunk<CR>',
         ['n <leader>gr'] = '<cmd>Gitsigns reset_hunk<CR>',
-        ['v <leader>gr'] = '<cmd>Gitsigns reset_hunk<CR>',
-        -- visual mode
         ['n <leader>gR'] = '<cmd>Gitsigns reset_buffer<CR>',
         ['n <leader>gp'] = '<cmd>Gitsigns preview_hunk<CR>',
         ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line{full=true}<CR>',
         ['n <leader>gS'] = '<cmd>Gitsigns stage_buffer<CR>',
         ['n <leader>gU'] = '<cmd>Gitsigns reset_buffer_index<CR>',
+
+        -- visual mode
+        ['v <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
+        ['v <leader>gr'] = '<cmd>Gitsigns reset_hunk<CR>',
 
         -- Text objects
         ['o ih'] = ':<C-U>Gitsigns select_hunk<CR>',
@@ -71,3 +71,7 @@ git.setup {
         enable = false
     },
 }
+-- set colors for gitsigns
+vim.cmd[[ hi DiffAdd guibg=#333333 guifg=#8ec07c ctermbg=none ]]
+vim.cmd[[ hi DiffChange guibg=#333333 guifg=#8f3f71 ctermbg=none ]]
+vim.cmd[[ hi DiffDelete guibg=#333333 guifg=#fb4934 ctermbg=none ]]
