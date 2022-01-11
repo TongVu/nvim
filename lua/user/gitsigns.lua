@@ -5,28 +5,31 @@ end
 
 git.setup {
     signs = {
-        add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+        add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'}, -- 契
         change       = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-        delete       = {hl = 'GitSignsDelete', text = " ", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        topdelete    = {hl = 'GitSignsDelete', text = " ", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        changedelete = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+        delete       = {hl = 'GitSignsDelete', text = "契", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+        topdelete    = {hl = 'GitSignsDelete', text = "契", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+        changedelete = {hl = 'GitSignsChange', text = ' ', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
     },
     signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
     numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl     = false, -- Toggle with `:Gitsigns togle_linehl`
     word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
     keymaps = {
+        -- add this line
         -- Default keymap options
         noremap = true,
 
-        ['n ]gn'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
-        ['n [gp'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
+        ['n gn'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
+        ['n gp'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
 
+        -- normal mode
         ['n <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
         ['v <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
         ['n <leader>gu'] = '<cmd>Gitsigns undo_stage_hunk<CR>',
         ['n <leader>gr'] = '<cmd>Gitsigns reset_hunk<CR>',
         ['v <leader>gr'] = '<cmd>Gitsigns reset_hunk<CR>',
+        -- visual mode
         ['n <leader>gR'] = '<cmd>Gitsigns reset_buffer<CR>',
         ['n <leader>gp'] = '<cmd>Gitsigns preview_hunk<CR>',
         ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line{full=true}<CR>',
@@ -40,7 +43,7 @@ git.setup {
     watch_gitdir = {
         interval = 1000,
         follow_files = true
-    },
+    }, -- hello
     attach_to_untracked = true,
     current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {

@@ -66,5 +66,5 @@ function _HTOP_TOGGLE()
     htop:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it on
-vim.api.nvim_set_keymap("t", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it off
+vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it on
+vim.api.nvim_set_keymap("t", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it off
