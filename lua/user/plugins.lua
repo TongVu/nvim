@@ -36,6 +36,7 @@ return require('packer').startup(function()
     use "numToStr/Comment.nvim" -- Easily comment stuff with gcc and gbc
     use "kyazdani42/nvim-web-devicons" -- Icon fonts for everythings
     use 'kyazdani42/nvim-tree.lua' -- File folder explorer
+    use 'norcalli/nvim-colorizer.lua' -- colorizer  -- haven't configured it yet
 
     -- using packer.nvim
     use "moll/vim-bbye" -- Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout

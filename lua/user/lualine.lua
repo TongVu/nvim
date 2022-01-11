@@ -1,3 +1,7 @@
+local status_ok, lua_line = pcall(require, "lualine")
+if not status_ok then
+    return
+end
 --cool function for progress
 local progress = function()
     local current_line = vim.fn.line(".")
@@ -9,7 +13,7 @@ local progress = function()
 end
 --cool functions show current battery life
 
-require('lualine').setup {
+lua_line.setup {
     options = {
         icons_enabled = true,
         theme = 'everforest',
