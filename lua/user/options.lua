@@ -46,6 +46,10 @@ opt.sidescrolloff = 20
 opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
 opt.shortmess:append "c"
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.cmd[[ set whichwrap+=<,>,[,],h,l ]]
+vim.cmd[[ set iskeyword+=- ]]
+
+vim.cmd[[ hi DiffAdd guibg=#333333 guifg=#8ec07c ctermbg=none ]]
+vim.cmd[[ hi DiffChange guibg=#333333 guifg=#fabd2f ctermbg=none ]]
+vim.cmd[[ hi DiffDelete guibg=#333333 guifg=#fb4934 ctermbg=none ]]
 

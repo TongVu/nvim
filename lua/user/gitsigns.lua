@@ -2,12 +2,13 @@ local status_ok, git = pcall(require, "gitsigns")
 if not status_ok then
     return
 end
+
 git.setup {
     signs = {
         add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
         change       = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-        delete       = {hl = 'GitSignsDelete', text = "契", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        topdelete    = {hl = 'GitSignsDelete', text = "契", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+        delete       = {hl = 'GitSignsDelete', text = " ", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+        topdelete    = {hl = 'GitSignsDelete', text = " ", numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
         changedelete = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
     },
     signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
@@ -18,8 +19,8 @@ git.setup {
         -- Default keymap options
         noremap = true,
 
-        ['n ]gh'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
-        ['n [gh'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
+        ['n ]gn'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
+        ['n [gp'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
 
         ['n <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
         ['v <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
@@ -67,9 +68,3 @@ git.setup {
         enable = false
     },
 }
-local cmd = vim.cmd
-cmd [[
-hi DiffAdd guibg=#333333 guifg=#8ec07c ctermbg=none
-hi DiffChange guibg=#333333 guifg=#fabd2f ctermbg=none
-hi DiffDelete guibg=#333333 guifg=#fb4934 ctermbg=none
-]]
