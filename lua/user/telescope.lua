@@ -3,7 +3,6 @@ if not status_ok then
     return
 end
 
-
 local actions = require "telescope.actions"
 
 telescope.setup {
@@ -120,5 +119,5 @@ telescope.setup {
 
     },
 }
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('projects')
+telescope.load_extension('fzf')
+telescope.load_extension('projects')
