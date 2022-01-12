@@ -114,36 +114,3 @@ keymap("n", "<C-f>", ":NvimTreeFindFile<cr>", opts)
 
 
 
--- ================================================================================ --
--- ***********************        VIM FUGITIVE                 ******************** --
--- ================================================================================ --
-
-keymap("n", "<leader>ga", "<cmd><cr>", opts)
-keymap("n", "<leader>gs", "<cmd><cr>", opts)
-keymap("n", "<leader>gc", "<cmd><cr>", opts)
-keymap("n", "<leader>gd", "<cmd><cr>", opts)
-keymap("n", "<leader>ge", "<cmd><cr>", opts)
-keymap("n", "<leader>gr", "<cmd><cr>", opts)
-keymap("n", "<leader>gw", "<cmd><cr>", opts)
-keymap("n", "<leader>gl", "<cmd><cr>", opts)
-keymap("n", "<leader>gp", "<cmd><cr>", opts)
-keymap("n", "<leader>gm", "<cmd><cr>", opts)
-keymap("n", "<leader>gb", "<cmd><cr>", opts)
-keymap("n", "<leader>go", "<cmd><cr>", opts)
---[[fugitive git bindings
-nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gw :Gwrite<CR><CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gp :Ggrep<Space>
-nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gb :Git branch<Space>
-nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gps :Dispatch! git push<CR>
-nnoremap <space>gpl :Dispatch! git pull<CR>
-]]
