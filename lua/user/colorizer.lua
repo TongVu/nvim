@@ -36,6 +36,10 @@ end
 -- Exclude some filetypes from highlighting by using `!`
 nvim_colorizer.setup {
     '*'; -- Highlight all files, but customize some others.
-    '!vim'; -- Exclude vim from highlighting.
+    -- '!vim'; -- Exclude vim from highlighting.
     -- Exclusion Only makes sense if '*' is specified!
+
+    css = { rgb_fn = true; }; -- Enable parsing rgb(...) functions in css.
+    html = { names = false; } -- Disable parsing "names" like Blue or Gray
 }
+-- colorizer.setup() -- add this line for always attach to buffer

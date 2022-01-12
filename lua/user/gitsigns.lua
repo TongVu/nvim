@@ -71,7 +71,7 @@ git.setup {
         enable = false
     },
 }
--- set colors for gitsigns
-vim.cmd[[ hi DiffAdd guibg=#333333 guifg=#8ec07c ctermbg=none ]]
+-- set colors for gitsigns -- haven't got any affect
+vim.cmd[[ hi DiffAdd guibg=#333333 guifg=#458588 ctermbg=none ]]
 vim.cmd[[ hi DiffChange guibg=#333333 guifg=#8f3f71 ctermbg=none ]]
 vim.cmd[[ hi DiffDelete guibg=#333333 guifg=#fb4934 ctermbg=none ]]

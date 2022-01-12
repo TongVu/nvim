@@ -25,4 +25,5 @@ require "user.project"
 require "user.alpha"
 require "user.impatient"
 require "user.autocmds"
+require "user.colorizer"
 -- require "user.bufferline" -- I get rid of this plugin because I can setup lualine show tablines so it's basically redundant to me
