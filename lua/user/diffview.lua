@@ -1,6 +1,7 @@
 -- Lua
 local cb = require'diffview.config'.diffview_callback
 
+--add this line to test diffview
 require'diffview'.setup {
     diff_binaries = false,    -- Show diffs for binaries
     enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
