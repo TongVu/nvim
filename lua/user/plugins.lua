@@ -88,7 +88,7 @@ return require('packer').startup(function()
     use { "nvim-telescope/telescope-file-browser.nvim" } --Install this to have a Telescope file broswer in nvim editor
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- allows fuzzy find in telescope
     -- Git
-    use "lewis6991/gitsigns.nvim"
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
     use "akinsho/toggleterm.nvim" -- terminals
 end)
 
