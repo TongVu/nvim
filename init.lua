@@ -6,6 +6,7 @@ require "user.colorscheme"
 require "user.funcs"
 require "user.plugins"
 require "user.keymaps"
+require "user.colorizer"
 
 -- ======================================= --
 -- *********  PLUGINS REQUIREMENT   ****** --
@@ -19,11 +20,10 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.indent_blankline"
 require "user.gitsigns"
-require "user.toggleterm"
+require "user.toggleterm" -- toggle term also have builtin lazy git so we don't have to add one
 require "user.comment"
 require "user.project"
 require "user.alpha"
 require "user.impatient"
 require "user.autocmds"
-require "user.colorizer"
 -- require "user.bufferline" -- I get rid of this plugin because I can setup lualine show tablines so it's basically redundant to me

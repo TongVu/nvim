@@ -1,4 +1,9 @@
-require('gitsigns').setup {
+local status_ok, git = pcall(require, "gitsigns")
+if not status_ok then
+    return
+end
+
+git.setup {
     signs = {
         add          = {hl = 'GitSignsAdd'   , text = ' ', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
         change       = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'}, -- ▎
@@ -16,18 +21,20 @@ require('gitsigns').setup {
         noremap = true,
         ['n gn'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
         ['n gp'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
-
+        -- STAGE HUNK
         ['n <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
         ['v <leader>gs'] = ':Gitsigns stage_hunk<CR>',
+        -- UNDO _ RESET HUNK/BUFFER
         ['n <leader>gu'] = '<cmd>Gitsigns undo_stage_hunk<CR>',
         ['n <leader>gr'] = '<cmd>Gitsigns reset_hunk<CR>',
         ['v <leader>gr'] = ':Gitsigns reset_hunk<CR>',
         ['n <leader>gR'] = '<cmd>Gitsigns reset_buffer<CR>',
+        -- Preview & Blame
         ['n <leader>gp'] = '<cmd>Gitsigns preview_hunk<CR>',
         ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line{full=true}<CR>',
+        -- STAGE BUFFER & RESET BUFFER INDEX
         ['n <leader>gS'] = '<cmd>Gitsigns stage_buffer<CR>',
         ['n <leader>gU'] = '<cmd>Gitsigns reset_buffer_index<CR>',
-
         -- Text objects
         ['o ih'] = ':<C-U>Gitsigns select_hunk<CR>',
         ['x ih'] = ':<C-U>Gitsigns select_hunk<CR>'
