@@ -3,6 +3,7 @@
 -- ========================================================================================================================================================== --
 -- :help options
 local opt = vim.opt
+local cmd = vim.cmd
 --local o = vim.o
 --local wo = vim.wo
 
@@ -47,3 +48,6 @@ opt.guifont = "monospace:h17"               -- the font used in graphical neovim
 opt.shortmess:append "c"
 vim.cmd[[ set whichwrap+=<,>,[,],h,l ]]
 vim.cmd[[ set iskeyword+=- ]]
+cmd[[set guicursor=n:blinkwait100 ]]
+cmd[[set guicursor=n:blinkoff50 ]]
+cmd[[set guicursor=n:blinkon100 ]]
