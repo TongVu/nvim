@@ -47,4 +47,3 @@ opt.guifont = "monospace:h17"               -- the font used in graphical neovim
 opt.shortmess:append "c"
 vim.cmd[[ set whichwrap+=<,>,[,],h,l ]]
 vim.cmd[[ set iskeyword+=- ]]
-
