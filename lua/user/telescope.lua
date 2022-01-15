@@ -100,9 +100,6 @@ telescope.setup {
             override_file_sorter = true,-- override the file sorter
             case_mose = "smart_case",-- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
         },
-        file_browser = {
-            theme = "ivy"
-        }
         --         project = {
         --             base_dirs = {
         --                 {'~/.config/nvim', max_depth=5}
@@ -114,12 +111,6 @@ telescope.setup {
         --             },
         --             hidden_files = true -- default: false
         --         }
-        -- Your extension configuration goes here:
-        -- extension_name = {
-        --   extension_config_key = value,
-        -- }
-        -- please take a look at the readme of the extension you want to configure
-
     },
 }
 telescope.load_extension('fzf')
