@@ -30,7 +30,7 @@ function _G.set_terminal_keymaps()
     local opts = {noremap = true}
     vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
     -- vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
-    vim.api.nvim_buf_set_keymap(0, 't', '<C-h>',[[<C-\><C-n><C-W>h]], opts)
+    vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
     vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
     vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
     vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
@@ -42,10 +42,10 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -- ============         Keymaps for fast open these functions        ============ --
 -- ============================================================================== --
 local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+local gitui = Terminal:new({ cmd = "gitui", hidden = true })
 
-function _LAZYGIT_TOGGLE()
-    lazygit:toggle()
+function _GITUI_TOGGLE()
+    gitui:toggle()
 end
 
 local node = Terminal:new({ cmd = "node", hidden = true })
@@ -66,5 +66,5 @@ function _HTOP_TOGGLE()
     htop:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it on
-vim.api.nvim_set_keymap("t", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it off
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _GITUI_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it on
+vim.api.nvim_set_keymap("t", "<leader>gg", "<cmd>lua _GITUI_TOGGLE()<CR>", {noremap = true, silent = true}) -- turn it off
