@@ -49,7 +49,8 @@ return require('packer').startup(function()
     use "lewis6991/impatient.nvim" --[[  Speed up loading Lua modules in Neovim to improve startup time. ]]
 
     -- Colorscheme
-    use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    -- use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim' -- This one is also my go-to colorscheme
 
     -- ======================================================================== --
