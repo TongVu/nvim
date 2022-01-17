@@ -8,7 +8,7 @@ vim.api.nvim_exec(
     let t:is_transparent = 1
     function! Toggle_transparent_background()
     if t:is_transparent == 1
-    hi Normal guibg=#282828 ctermbg=NONE
+    hi Normal guibg=#32302F ctermbg=NONE
     let t:is_transparent = 0
     else
     hi Normal guibg=NONE ctermbg=NONE
