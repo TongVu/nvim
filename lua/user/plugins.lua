@@ -43,12 +43,12 @@ return require('packer').startup(function()
     use "nvim-lualine/lualine.nvim" -- show the status line and tabline
     use "lukas-reineke/indent-blankline.nvim" -- indent blankline
 
-    -- Fast go to Projects
+    ---- Fast go to Projects
     use "goolord/alpha-nvim"
     use "ahmedkhalf/project.nvim" --[[ provides superior project management - integrated with telescope. haven't known how to use this stuff ]]
     use "lewis6991/impatient.nvim" --[[  Speed up loading Lua modules in Neovim to improve startup time. ]]
 
-    -- Colorscheme
+    ---- Colorscheme
     -- use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim' -- This one is also my go-to colorscheme
@@ -56,7 +56,7 @@ return require('packer').startup(function()
     -- ======================================================================== --
     -- These 2 things cmp and snippets go together to have a better experience  --
     -- ======================================================================== --
-    -- cmp plugins
+    --cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
@@ -78,7 +78,7 @@ return require('packer').startup(function()
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-    -- Treesitter
+    -- -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- better syntax hightlight
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
