@@ -6,4 +6,4 @@ if not status_ok then
     vim.notify("colorscheme " .. colorscheme .. " not found!")
     return
 end
-cmd[[:hi Cursorline gui=reverse gui=reverse guibg=NONE guifg=NONE]]
+-- cmd[[:hi Cursorline gui=reverse gui=reverse guibg=NONE guifg=NONE]]
