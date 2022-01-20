@@ -19,8 +19,8 @@ git.setup {
         -- Default keymap options
 
         noremap = true,
-        ['n gn'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
-        ['n gp'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
+        ['n ]h'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'"},
+        ['n [h'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'"},
         -- STAGE HUNK
         ['n <leader>gs'] = '<cmd>Gitsigns stage_hunk<CR>',
         ['v <leader>gs'] = ':Gitsigns stage_hunk<CR>',
@@ -71,6 +71,6 @@ git.setup {
     },
 }
 
-vim.cmd[[ highlight GitSignsAdd guifg=#9ece6a ]]
+vim.cmd[[ highlight GitSignsAdd guifg=#8ec07c ]]
 vim.cmd[[ highlight GitSignsChange guifg=#2ac3de]]
-vim.cmd[[ highlight GitSignsDelete guifg=#f7768e]]
+vim.cmd[[ highlight GitSignsDelete guifg=#fb4939]] --guifg=#f7768e]]

@@ -47,6 +47,11 @@ opt.scrolloff = 10                          -- is one of my fav
 opt.sidescrolloff = 20
 opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 opt.shortmess:append "c"
-vim.cmd[[ set whichwrap+=<,>,[,],h,l ]]
-vim.cmd[[ set iskeyword+=- ]]
+opt.signcolumn= 'yes'
+cmd[[syntax on]]
+cmd[[filetype on]]
+cmd[[filetype plugin on]]
+cmd[[filetype indent on]]
+cmd[[set whichwrap+=<,>,[,],h,l ]]
+cmd[[set iskeyword+=- ]]
 cmd[[set guicursor=n:blinkwait50-blinkoff50-blinkon50]]
