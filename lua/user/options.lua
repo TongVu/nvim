@@ -9,8 +9,7 @@ local cmd = vim.cmd
 
 opt.autoindent = true
 opt.backup = false                          -- creates a backup file
-opt.background ="dark"
-cmd[[let g:gruvbox_contrast_dark = 'medium']]
+opt.background ='dark'
 opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 opt.autochdir = true
 opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
@@ -43,7 +42,7 @@ opt.relativenumber = true                   -- set relative numbered lines
 opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 opt.wrap = false                            -- display lines as one long line
-opt.scrolloff = 10                          -- is one of my fav
+opt.scrolloff = 12                          -- is one of my fav
 opt.sidescrolloff = 20
 opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 opt.shortmess:append "c"
