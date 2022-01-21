@@ -38,7 +38,7 @@ keymap("n", "<leader><Down>", ":resize +5<CR>", opts)
 -- Navigate buffers
 keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
-keymap("n", "<leader>bd", ":bnext<CR>:bd#<CR>", opts) -- use vim Bbye to delete buffer without messing with layout
+keymap("n", "<leader>q", ":bnext<CR>:bd#<CR>", opts) -- use vim Bbye to delete buffer without messing with layout
 
 -- Move text up and down
 keymap("n", "<S-Down>", "<Esc>:m .+1<CR>", opts)
@@ -62,7 +62,7 @@ keymap("n", "<leader>w", ":w<cr>", opts)
 -- Source file
 keymap("n", "<leader>s.", ":so %<cr>", opts)
 -- Quit faster
-keymap("n", "<leader>q", ":q<cr>", opts)
+keymap("n", "<leader><leader>q", ":q<cr>", opts)
 
 
 -- ***************** --
@@ -96,11 +96,12 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- *********************** TELESCOPE KEY MAPS      ******************** --
 -- ================================================================================ --
 -- NORMAL MODE
-keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<leader>/", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n","<leader>f/","<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>",{noremap = true})
+keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
+keymap("n", "<leader>/", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find()<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
+keymap("n", "<leader>m", "<cmd>lua require'telescope.builtin'.diagnostics({bufnr=0})<cr>", opts)
+keymap("n","<leader>f/","<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>",{})
 keymap("n","<leader>fp","<cmd>Telescope projects<cr>",{noremap = true})
 
 

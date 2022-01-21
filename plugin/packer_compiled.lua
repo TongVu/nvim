@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/TongVu/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/TongVu/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/Users/TongVu/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",

@@ -77,6 +77,7 @@ return require('packer').startup(function()
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+    use 'kosayoda/nvim-lightbulb' -- for fun, show lightbulb
     -- -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- better syntax hightlight
     use "JoosepAlviste/nvim-ts-context-commentstring"

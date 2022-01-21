@@ -2,8 +2,7 @@
 -- =============================================== --
 -- *********  MAKE BACKGROUND TRANSPARENT   ****** --
 -- =============================================== --
-vim.api.nvim_exec(
-    [[
+vim.api.nvim_exec([[
 " ==============================
 " ======= TRANSPARENT   ========
 " ==============================
@@ -41,6 +40,5 @@ augroup autoindent
 au!
 autocmd BufWritePre * :normal migg=G`i
 augroup End
-
 ]],
     true)
