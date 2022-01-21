@@ -50,8 +50,6 @@ return require('packer').startup(function()
 
     ---- Colorscheme
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    -- use 'morhetz/gruvbox'
-    -- use 'eddyekofo94/gruvbox-flat.nvim'
     use 'folke/tokyonight.nvim' -- This one is also my go-to colorscheme
 
     -- ======================================================================== --

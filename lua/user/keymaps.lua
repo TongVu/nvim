@@ -61,7 +61,7 @@ keymap("n", "<S-h>", ":tabprev<cr>", opts)
 keymap("n", "<leader>w", ":w<cr>", opts)
 -- Source file
 keymap("n", "<leader>s.", ":so %<cr>", opts)
--- Faster quit
+-- Quit faster
 keymap("n", "<leader>q", ":q<cr>", opts)
 
 
