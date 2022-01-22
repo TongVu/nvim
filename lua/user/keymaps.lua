@@ -24,10 +24,14 @@ vim.g.maplocalleader = " "
 -- ****** Normal *** --
 -- ***************** --
 -- Better window navigation
-keymap("n", "<leader>h", "<C-w>h", opts)
-keymap("n", "<leader>j", "<C-w>j", opts)
-keymap("n", "<leader>k", "<C-w>k", opts)
-keymap("n", "<leader>l", "<C-w>l", opts)
+keymap("n", "<leader>h", "<C-w>h<CR>", opts)
+keymap("n", "<leader>j", "<C-w>j<CR>", opts)
+keymap("n", "<leader>k", "<C-w>k<CR>", opts)
+keymap("n", "<leader>l", "<C-w>l<CR>", opts)
+
+-- Join lines
+---------------------------------------
+keymap("n", "<C-j>", "<S-j><CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<leader>-", ":vertical resize -5<CR>", opts)
@@ -49,7 +53,7 @@ keymap("n", "J", "<C-d>", opts)
 keymap("n", "K", "<C-u>", opts)
 
 -- Split pane
-keymap("n", "<leader>vs", "<C-w>v<cr>", opts)
+keymap("n", "<leader>v", "<C-w>v<cr>", opts)
 keymap("n", "<leader>s", "<C-w>s<cr>", opts)
 
 -- TAB navigation

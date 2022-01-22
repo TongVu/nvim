@@ -57,7 +57,7 @@ nvim_tree.setup {
             hint = "",
             info = "",
             warning = "",
-            error = "",
+            error = "",--
         },
     },
     update_focused_file = {

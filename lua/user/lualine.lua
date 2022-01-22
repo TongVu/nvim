@@ -15,7 +15,7 @@ end
 lua_line.setup {
     options = {
         icons_enabled = true,
-        theme = 'everforest',
+        theme = 'gruvbox',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {'NvimTree', 'Starify', 'alpha'},
@@ -23,8 +23,14 @@ lua_line.setup {
     },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = { 'branch' ,{'diff', symbols = {added = ' ', modified = 'ﰣ ', removed = ' '},}},
-        lualine_c = { 'filename','diagnostics' },
+        lualine_b = { 'branch' ,{
+            'diff',
+            symbols = {added = ' ', modified = 'ﰣ ', removed = ' ' },
+        }},
+        lualine_c = { 'filename',{
+            'diagnostics',
+            symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+        }}, -- finding a way to change diagnostics icon here
         lualine_x = {'filesize', 'fileformat', 'filetype'},
         lualine_y = {progress,'progress'},
         lualine_z = {'location' }
@@ -39,12 +45,12 @@ lua_line.setup {
     },
     tabline = {
         lualine_a = {'tabs'},
-        lualine_b = {'buffers'},
+        lualine_b = { 'buffers' },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {}
     },
-    extensions = {'nvim-tree'}
+    extensions = {}
 }
 

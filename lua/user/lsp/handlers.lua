@@ -3,7 +3,7 @@ local M = {}
 -- TODO: backfill this to template
 M.setup = function()
     local signs = {
-    { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignError", text = "" },--
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
     { name = "DiagnosticSignInfo", text = "" },
@@ -49,12 +49,12 @@ local function lsp_highlight_document(client)
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec(
             [[
-                augroup lsp_document_highlight
-                autocmd! * <buffer>
-                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+            augroup lsp_document_highlight
+            autocmd! * <buffer>
+            autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
 autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 augroup END
-                ]],
+            ]],
             false
         )
     end
