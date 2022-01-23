@@ -6,12 +6,14 @@ end
 local progress = function()
     local current_line = vim.fn.line(".")
     local total_lines = vim.fn.line("$")
-    local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+    -- local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+    local chars = { "██", "▇▇", "▆▆", "▅▅", "▄▄", "▃▃", "▂▂", "▁▁", "__", "  " }
     local line_ratio = current_line / total_lines
     local index = math.ceil(line_ratio * #chars)
     return chars[index]
 end
-------------------------
+
+------------------------------------------------------------------------------
 lua_line.setup {
     options = {
         icons_enabled = true,
@@ -32,19 +34,19 @@ lua_line.setup {
             symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
         }}, -- finding a way to change diagnostics icon here
         lualine_x = {'filesize', 'fileformat', 'filetype'},
-        lualine_y = {progress,'progress'},
-        lualine_z = {'location' }
+        lualine_y = { 'progress' },
+        lualine_z = { progress,'location' }
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
         lualine_y = {},
         lualine_z = {}
     },
     tabline = {
-        lualine_a = {'tabs'},
+        lualine_a = { 'tabs' },
         lualine_b = { 'buffers' },
         lualine_c = {},
         lualine_x = {},

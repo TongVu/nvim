@@ -9,7 +9,7 @@ local cmd = vim.cmd
 
 opt.autoindent = true
 opt.backup = false                          -- creates a backup file
-opt.background ='light'
+opt.background ='dark'
 opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 opt.autochdir = true
 opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages

@@ -20,10 +20,9 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.indent_blankline"
 require "user.gitsigns"
-require "user.toggleterm" -- toggle term also have builtin lazy git so we don't have to add one
+require "user.toggleterm"
 require "user.comment"
 require "user.project"
 require "user.alpha"
 require "user.impatient"
 require "user.autocmds"
-
