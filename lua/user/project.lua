@@ -2,6 +2,7 @@ local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
     return
 end
+
 project.setup({
     ---@usage set to false to disable project.nvim.
     --- This is on by default since it's currently the expected behavior.
@@ -26,7 +27,7 @@ project.setup({
     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
 
     ---@ Show hidden files in telescope when searching for files in a project
-    show_hidden = false,
+    show_hidden = true,
 
     ---@usage When set to false, you will get a message when project.nvim changes your directory.
     -- When set to false, you will get a message when project.nvim changes your directory.
@@ -40,9 +41,15 @@ project.setup({
     datapath = vim.fn.stdpath("data"),
 })
 
-local tele_status_ok, telescope = pcall(require, "telescope")
-if not tele_status_ok then
-    return
-end
-
-telescope.load_extension('projects') -- integrates telescope with project
+--[[
+INSERT MODE
+<c-d>	delete currently selected project
+<c-v>	rename currently selected project
+<c-a>	create a project*
+<c-s>	search inside files within your project
+<c-b>	browse inside files within your project
+<c-l>	change to the selected project's directory without opening it
+<c-r>	find a recently opened file within your project
+<c-f>	find a file within your project (same as <CR>)
+* defaults to your git root if used inside a git project, otherwise, it will use your current working directory
+]]
