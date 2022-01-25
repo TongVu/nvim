@@ -19,7 +19,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-
 -- ***************** --
 -- ****** Normal *** --
 -- ***************** --
@@ -78,7 +77,6 @@ keymap("n", "<leader>o", ":so %<cr>", opts)
 ---------------------------------------
 keymap("n", "<leader><leader>q", ":q<cr>", opts)
 
-
 -- ***************** --
 -- ****** Visual *** --
 -- ***************** --
@@ -105,20 +103,17 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
 -- ================================================================================ --
 -- *********************** TELESCOPE KEY MAPS      ******************** --
 -- ================================================================================ --
 -- NORMAL MODE
 keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
-keymap("n", "<leader>/", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find()<cr>", opts)
+keymap("n", "/", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find()<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
 keymap("n", "<leader>m", "<cmd>lua require'telescope.builtin'.diagnostics({bufnr=0})<cr>", opts)
 keymap("n", "<leader>f/", "<cmd>lua require'telescope'.extensions.file_browser.file_browser()<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
-
-
 
 -- ================================================================================ --
 -- ***********************      NVIM_TREE MAPS                 ******************** --
@@ -127,6 +122,3 @@ keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<C-b>", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<C-f>", ":NvimTreeFindFile<cr>", opts)
 -- nnoremap <leader>r :NvimTreeRefresh<CR> -- Still haven't known what Refresh does
-
-
-
