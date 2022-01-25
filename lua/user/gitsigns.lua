@@ -2,7 +2,7 @@ local status_ok, git = pcall(require, "gitsigns")
 if not status_ok then
     return
 end
---  ⏽ ▎  |
+-- ■ ● ▎ x  ⏽   |
 git.setup {
     signs = {
         add          = { hl = 'GitSignsAdd'   , text = '██', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },

@@ -3,7 +3,7 @@ local M = {}
 -- TODO: backfill this to template
 M.setup = function()
     local signs = {
-    { name = "DiagnosticSignError", text = "" },-- 
+    { name = "DiagnosticSignError", text = "" },--
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
     { name = "DiagnosticSignInfo", text = "" },
@@ -15,7 +15,10 @@ M.setup = function()
 
     local config = {
         -- disable virtual text
-        virtual_text = true,
+        virtual_text = {
+            true,
+            prefix = "⏽" -- ■
+        },
         -- show signs
         signs = {
             active = signs,
@@ -29,7 +32,7 @@ M.setup = function()
             border = "rounded",
             source = "always",
             header = "",
-            prefix = "",
+            prefix = "⏽",
         },
     }
 
@@ -52,8 +55,8 @@ local function lsp_highlight_document(client)
             augroup lsp_document_highlight
             autocmd! * <buffer>
             autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-augroup END
+            autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+            augroup END
             ]],
             false
         )

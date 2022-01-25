@@ -36,7 +36,7 @@ return require('packer').startup(function()
     use "numToStr/Comment.nvim" -- Easily comment stuff with gcc and gbc
     use "kyazdani42/nvim-web-devicons" -- Icon fonts for everythings
     use 'kyazdani42/nvim-tree.lua' -- File folder explorer
-    use 'norcalli/nvim-colorizer.lua' -- colorizer  -- haven't configured it yet
+    use 'norcalli/nvim-colorizer.lua'
 
     -- using packer.nvim
     use "moll/vim-bbye" -- Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout
@@ -77,7 +77,7 @@ return require('packer').startup(function()
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-    use 'kosayoda/nvim-lightbulb' -- for fun, show lightbulb
+
     -- -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- better syntax hightlight
     use "JoosepAlviste/nvim-ts-context-commentstring"
