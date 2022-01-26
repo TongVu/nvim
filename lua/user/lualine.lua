@@ -13,54 +13,48 @@ local index = math.ceil(line_ratio * #chars)
 return chars[index]
 end ]]
 
-local termIcon = function()
-	local icon = ""
-	return icon
-end
 ------------------------------------------------------------------------------
 lua_line.setup({
 	options = {
 		icons_enabled = true,
-		theme = "gruvbox-material",
-		component_separators = { left = "", right = "" },
+		theme = "gruvbox",
+		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "NvimTree", "Starify", "alpha" },
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_b = {
-			{
-				"branch",
-				icon = "",
-			},
-			{
-				"diff",
-				symbols = { added = " ", modified = "ﰣ ", removed = " " },
-			},
-		},
+		lualine_a = {},
+		lualine_b = {},
 		lualine_c = {
+			"mode",
+			{ "branch", icon = "" },
 			"filename",
 			{
 				"diagnostics",
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				always_visible = false,
 			},
-		}, -- finding a way to change diagnostics icon here
-		lualine_x = { "filesize", termIcon, "filetype" },
-		lualine_y = { { "progress", icon = "" } },
-		lualine_z = { "location" },
+		},
+		lualine_x = {
+			{ "diff", icon = " ", symbols = { added = " ", modified = "ﰣ ", removed = " " } },
+			"filetype",
+			{ "location", icon = ":" },
+		},
+		lualine_y = {},
+		lualine_z = {},
 	},
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
+		lualine_c = {},
+		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
 	},
 	tabline = {
-		lualine_a = { "tabs" },
-		lualine_b = { "buffers" },
+		lualine_a = {},
+		lualine_b = { "tabs", "buffers" },
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},

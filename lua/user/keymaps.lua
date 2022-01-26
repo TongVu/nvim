@@ -6,12 +6,14 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+-- Remap space as leader key
+---------------------------------------
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Modes
+---------------------------------------
 --   normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
@@ -19,19 +21,14 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- ***************** --
--- ****** Normal *** --
--- ***************** --
+-- NORMAL MODE *********
+-- ********************************** --
 -- Better window navigation
 ---------------------------------------
-keymap("n", "<leader>h", "<C-w>h<CR>", opts)
-keymap("n", "<leader>j", "<C-w>j<CR>", opts)
-keymap("n", "<leader>k", "<C-w>k<CR>", opts)
-keymap("n", "<leader>l", "<C-w>l<CR>", opts)
-
--- Join lines
----------------------------------------
-keymap("n", "<C-j>", "<S-j><CR>", opts)
+keymap("n", "<leader>h", "<C-w>h", opts)
+keymap("n", "<leader>j", "<C-w>j", opts)
+keymap("n", "<leader>k", "<C-w>k", opts)
+keymap("n", "<leader>l", "<C-w>l", opts)
 
 -- Resize with arrows
 ---------------------------------------
@@ -76,10 +73,16 @@ keymap("n", "<leader>o", ":so %<cr>", opts)
 -- Quit faster
 ---------------------------------------
 keymap("n", "<leader><leader>q", ":q<cr>", opts)
+-- Join lines
+---------------------------------------
+keymap("n", "<C-j>", "<S-j><CR>", opts)
+-- First non-blank character -- I hardly use B so it'll be perfect
+---------------------------------------
+keymap("n", "B", "<S-^>", opts)
 
--- ***************** --
--- ****** Visual *** --
--- ***************** --
+-- VISUAL MODE *********
+-- ********************************** --
+
 -- Stay in indent mode
 ---------------------------------------
 keymap("v", "<", "<gv", opts)
@@ -93,32 +96,12 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- ***************** --
--- **** Terminal *** --
--- ***************** --
+-- TERMINAL *********
+-- ********************************** --
+
 -- Better terminal navigation
 ---------------------------------------
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- ================================================================================ --
--- *********************** TELESCOPE KEY MAPS      ******************** --
--- ================================================================================ --
--- NORMAL MODE
-keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
-keymap("n", "/", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find()<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
-keymap("n", "<leader>m", "<cmd>lua require'telescope.builtin'.diagnostics({bufnr=0})<cr>", opts)
-keymap("n", "<leader>f/", "<cmd>lua require'telescope'.extensions.file_browser.file_browser()<cr>", opts)
-keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
-
--- ================================================================================ --
--- ***********************      NVIM_TREE MAPS                 ******************** --
--- ================================================================================ --
--- NORMAL MODE
-keymap("n", "<C-b>", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<C-f>", ":NvimTreeFindFile<cr>", opts)
--- nnoremap <leader>r :NvimTreeRefresh<CR> -- Still haven't known what Refresh does

@@ -1,15 +1,15 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+-- This setting have to be set before calling nvim_tree for the icons take effect
 vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
 	git = {
 		unstaged = "✗", --  ﮤ
 		staged = "✓", -- S ﮣ
 		unmerged = "", --
 		renamed = "➜",
-		deleted = " ",
-		untracked = " ", --U 
+		deleted = "",
+		untracked = "", --U
 		ignored = "◌",
 	},
 	folder = {
@@ -30,8 +30,8 @@ local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
 	return
 end
-
 local tree_cb = nvim_tree_config.nvim_tree_callback
+
 vim.g.nvim_tree_respect_buf_cwd = 1 -- this option for project.nvim
 nvim_tree.setup({
 	disable_netrw = true,
@@ -99,6 +99,14 @@ nvim_tree.setup({
 		tree_width = 30,
 	},
 })
+
+-- NVIM_TREE MAPS
+-- ================================================================================ --
+-- NORMAL MODE
+keymap("n", "<C-b>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<C-f>", ":NvimTreeFindFile<cr>", opts)
+
+-- nnoremap <leader>r :NvimTreeRefresh<CR> -- Still haven't known what Refresh does
 -- default mappings
 --[[ local list = {
 { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
